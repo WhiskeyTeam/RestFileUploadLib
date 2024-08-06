@@ -1,9 +1,10 @@
 plugins {
     id 'java'
+    id 'com.github.johnrengelman.shadow' version '7.1.2'
 }
 
 group = 'com.whiskey'
-version = '0.2.0-SNAPSHOT'
+version = '0.2.1-SNAPSHOT'
 
 repositories {
     mavenCentral()
@@ -31,6 +32,10 @@ dependencies {
 
 test {
     useJUnitPlatform()
+}
+
+shadowJar {
+    archiveClassifier.set('')
 }
 
 jar {
