@@ -1,0 +1,41 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.whiskey'
+version = '0.1-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+
+    compileOnly 'org.projectlombok:lombok:1.18.24'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
+
+    testCompileOnly('org.projectlombok:lombok:1.18.24')
+    testAnnotationProcessor('org.projectlombok:lombok:1.18.24')
+
+    // Apache HttpClient for making HTTP requests
+    implementation 'org.apache.httpcomponents:httpclient:4.5.14'
+    implementation 'org.apache.httpcomponents:httpcore:4.4.16'
+    // Apache Commons Codec for Hex encoding/decoding
+    implementation 'commons-codec:commons-codec:1.15'
+    // Joda-Time for handling date and time (Optional, Java 8+ users can use java.time)
+    implementation 'joda-time:joda-time:2.12.2'
+    implementation 'org.apache.httpcomponents:httpmime:4.5.14'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+jar {
+    manifest {
+        attributes "Implementation-Title": "RestFileUploadLib",
+                "Implementation-Version": version
+    }
+}
