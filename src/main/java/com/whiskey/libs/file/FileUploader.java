@@ -14,7 +14,7 @@ import java.util.UUID;
 public class FileUploader {
     private final String filePath;
 
-    private final String REQUEST_URL = "http://localhost:8080/file/upload";
+    private final String REQUEST_URL = "http://localhost:8083/file/upload";
 
     public FileUploader(String filePath) {
         this.filePath = filePath;
